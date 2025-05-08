@@ -1,12 +1,12 @@
 /* General Reset and Fonts */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  /* Navigation Bar */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
 nav {
   background-color: #222;
   color: #fff;
@@ -25,6 +25,11 @@ nav .site-title {
 nav .site-title a {
   text-decoration: none;
   color: #fff;
+}
+
+nav .site-title a:hover {
+  color: #890a0a;
+  transition: color 0.3s;
 }
 
 nav .site-title h1 {
@@ -54,30 +59,61 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #00bfff;
+  color: #890a0a;
+  transition: color 0.3s;
 }
 
-/* Responsive tweak */
+
 @media (max-width: 600px) {
   nav {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav ul {
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
   }
 }
 
-/* Blog Listing Styles */
+
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background: #890a0a;
+  transition: background 0.3s;
+}
+
 .blogs.content {
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
@@ -102,8 +138,9 @@ nav ul li a:hover {
 }
 
 .blogs.content .single:hover {
-  background: #eaf8ff;
+  background: #fceeee;
   border-color: #890a0a;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 .blogs.content .title {
@@ -119,35 +156,29 @@ nav ul li a:hover {
 }
 
 
-  
-  .title {
-    font-size: 1.5rem;
-    color: #4b0082;
-    margin-top: 1.5rem;
-  }
-  
-  .snippet {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1rem;
-  }
-  
-  /* Footer (footer.ejs) */
-  footer {
-    background: #4b0082;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
-  }
-  
+
+.title {
+  font-size: 1.5rem;
+  color: #4b0082;
+  margin-top: 1.5rem;
+}
+
+.snippet {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+footer {
+  background: #4b0082;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
 
-
-/* General body styles */
-
-
-/* Content container */
 .details.content {
   max-width: 800px;
   margin: 50px auto;
@@ -157,7 +188,6 @@ nav ul li a:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
 .details h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -165,13 +195,11 @@ nav ul li a:hover {
   padding-bottom: 10px;
 }
 
-/* Body paragraph */
 .details .content p {
   font-size: 1.2rem;
   line-height: 1.8;
 }
 
-/* Delete link/button */
 a.Delete {
   display: inline-block;
   margin-top: 30px;
@@ -189,14 +217,12 @@ a.Delete:hover {
   background-color: #c0392b;
 }
 
-
-/* Create Blog Form Styles */
 .create-blogs.content {
   max-width: 700px;
   margin: 40px auto;
   background-color: #fff;
   padding: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
@@ -238,5 +264,6 @@ a.Delete:hover {
 }
 
 .create-blogs button:hover {
-  background-color: #222222cb;
+  background-color:#890a0a;
+  transition: background-color 0.3s;
 }

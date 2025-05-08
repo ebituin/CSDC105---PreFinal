@@ -47,11 +47,40 @@ const blog_delete = (req, res) => {
             console.log(err)
         })
 }
+
+const blog_search = (req, res) => {
+    const search = req.query.q?.trim();
+
+    const query = search
+        ? {
+              $or: [
+                  { title: { $regex: search, $options: 'i' } },
+                  { snippet: { $regex: search, $options: 'i' } },
+                  { body: { $regex: search, $options: 'i' } }
+              ]
+          }
+        : {};
+
+    Blog.find(query).sort({ createdAt: -1 })
+        .then((result) => {
+            res.render('index', { 
+                title: search ? `Results for "${search}"` : 'All Blogs', 
+                blogs: result, 
+                searchQuery: search 
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).render('error', { title: 'Error loading blogs' });
+        });
+}
+
 module.exports = {
     blog_index,
     blog_details,
     blog_create_get,
     blog_create_post,
-    blog_delete
+    blog_delete,
+    blog_search
 }
  
